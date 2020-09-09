@@ -3,7 +3,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
     create_table :comments do |t|
       t.string :authore_name
       t.text :body
-      t.references :article, null: false, foreign_key: true
+      t.references :article, null: false, foreign_key: {on_delete: :cascade}
 
       t.timestamps
     end
